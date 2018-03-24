@@ -1,0 +1,26 @@
+{
+  "name": "helloworld",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-scripts": "1.1.1"
+  },
+  "scripts": {
+    "electron-dev": "set ELECTRON_START_URL=http://localhost:3000 && electron public",
+    "electron-build": "electron-packager build --platform=all --overwrite --asar",
+    "react-start": "react-scripts start",
+    "react-build": "react-scripts build",
+    "start": "concurrently \"npm run react-start\" \"npm run electron-dev\"",
+    "build": "npm run react-build && npm run electron-build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "homepage": "./",
+  "devDependencies": {
+    "concurrently": "^3.5.1",
+    "electron": "^1.8.4",
+    "electron-packager": "^11.2.0"
+  }
+}
